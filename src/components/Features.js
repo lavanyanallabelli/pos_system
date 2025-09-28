@@ -182,7 +182,7 @@ const Features = () => {
                                 {[
                                     'Instant data synchronization',
                                     'Multi-device compatibility',
-                                    'Offline mode available',
+                                    'Real-time inventory updates',
                                     'Automatic conflict resolution'
                                 ].map((item, index) => (
                                     <motion.li
