@@ -20,10 +20,10 @@ const Navbar = () => {
     }, []);
 
     const navItems = [
-        { href: '#features', label: 'Features' },
-        { href: '#pricing', label: 'Pricing' },
-        { href: '#about', label: 'About' },
-        { href: '#contact', label: 'Contact' },
+        { href: '/#features', label: 'Features' },
+        { href: '/pricing', label: 'Pricing' },
+        { href: '/about', label: 'About' },
+        { href: '/contact', label: 'Contact' },
     ];
 
     return (
@@ -56,18 +56,21 @@ const Navbar = () => {
                     {/* Desktop Menu */}
                     <div className="hidden lg:flex items-center space-x-8">
                         {navItems.map((item, index) => (
-                            <motion.a
+                            <motion.div
                                 key={item.href}
-                                href={item.href}
-                                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200 relative group"
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 whileHover={{ y: -2 }}
                             >
-                                {item.label}
-                                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
-                            </motion.a>
+                                <Link
+                                    to={item.href}
+                                    className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200 relative group"
+                                >
+                                    {item.label}
+                                    <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                                </Link>
+                            </motion.div>
                         ))}
                     </div>
 
@@ -163,17 +166,20 @@ const Navbar = () => {
                         >
                             <div className="py-4 space-y-4 border-t border-gray-200">
                                 {navItems.map((item, index) => (
-                                    <motion.a
+                                    <motion.div
                                         key={item.href}
-                                        href={item.href}
-                                        className="block text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200 py-2"
                                         initial={{ opacity: 0, x: -20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.1 }}
-                                        onClick={() => setIsMenuOpen(false)}
                                     >
-                                        {item.label}
-                                    </motion.a>
+                                        <Link
+                                            to={item.href}
+                                            className="block text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200 py-2"
+                                            onClick={() => setIsMenuOpen(false)}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </motion.div>
                                 ))}
                                 <div className="pt-4 space-y-3 border-t border-gray-200">
                                     {currentUser ? (
