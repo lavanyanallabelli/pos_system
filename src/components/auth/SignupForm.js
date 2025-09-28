@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Lock, Phone, Building, Eye, EyeOff, AlertCircle, Loader2, CheckCircle } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+// import { Link } from 'react-router-dom'; // Unused import - keeping for future use
 
 const SignupForm = ({ onClose, onSwitchToLogin, isPage = false }) => {
     const [formData, setFormData] = useState({

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, Star, ArrowRight } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
